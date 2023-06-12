@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>hello</title>
+    </head>
+    <body>
+        <div id="test"></div>
+        <div id="test2"></div>
+        <script type="text/javascript" src="../dependence/old/react.development.js"></script>
+        <script type="text/javascript" src="../dependence/old/react-dom.development.js"></script>
+        <script type="text/javascript" src="../dependence/old/babel.min.js"></script>
+        <script type="text/babel">
+            // 创建VDom
+            const vDom = <h1> Hello </h1>
+            // 渲染vDom
+            ReactDOM.render(vDom, document.getElementById('test'))
+            // js 创建虚拟DOM 本质是Object
+            const vDom2 = React.createElement('h1', {id: 'test2',}, React.createElement('span',{}, 'hheelloo'));
+            ReactDOM.render(vDom2, document.getElementById('test2'))
+
+            console.log('虚拟DOM', vDom)
+            console.log('真实DOM', document.getElementById('test'))
+        </script>
+    </body>
+</html>
