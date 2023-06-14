@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>hello</title>
+    </head>
+    <body>
+        <div id="test"></div>
+        <script type="text/javascript" src="../dependence/old/react.development.js"></script>
+        <script type="text/javascript" src="../dependence/old/react-dom.development.js"></script>
+        <script type="text/javascript" src="../dependence/old/babel.min.js"></script>
+        <script type="text/babel">
+            // 创建VDom
+            class Demo extends React.Component {
+                state = {
+                }
+                render() {
+                    const { name, age, gender } = this.props
+                    return (
+                        <ul>
+                            <li>姓名：{name}</li>
+                            <li>性别：{age}</li>
+                            <li>年龄：{gender}</li>
+                        </ul>
+                    )
+                }
+            }
+            const DemoProps = {name: 111, age: 24, gender: 'male',}
+            ReactDOM.render(<Demo {...DemoProps}/>, document.getElementById('test'))
+        </script>
+    </body>
+</html>

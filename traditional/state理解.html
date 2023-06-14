@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>hello</title>
+    </head>
+    <body>
+        <div id="test"></div>
+        <script type="text/javascript" src="../dependence/old/react.development.js"></script>
+        <script type="text/javascript" src="../dependence/old/react-dom.development.js"></script>
+        <script type="text/javascript" src="../dependence/old/babel.min.js"></script>
+        <script type="text/babel">
+            // 创建VDom
+            class Demo extends React.Component {
+                state = {
+                    isHot: false,
+                }
+                constructor(props) {
+                    super(props);
+                }
+                render() {
+                    const { isHot } = this.state
+                    const { changeHot } = this
+                    return (
+                        <div style={{backgroundColor: 'aqua'}} onClick={changeHot}> isHot: {isHot.toString()} </div>
+                    )
+                }
+
+                changeHot = ()=>{
+                    console.info('Changing hot')
+                    this.setState(state=>({
+                        isHot: !state.isHot
+                    }))
+                }
+            }
+            ReactDOM.render(<Demo/>, document.getElementById('test'))
+        </script>
+    </body>
+</html>
