@@ -1,0 +1,8 @@
+{
+    "devDependencies": {
+        "create-react-app": "^5.0.1"
+    },
+    "scripts": {
+        "create-react-app": "cd project && ../node_modules/create-react-app/index.js"
+    }
+}
